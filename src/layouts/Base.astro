@@ -28,10 +28,13 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
     />
   </head>
   <body>
-    <header class="site-header">
-      <a class="brand" href={`${base}/`}>{SITE_TITLE}</a>
-      <p class="tagline">{SITE_DESC}</p>
-    </header>
+   <header class="site-header">
+  <img class="avatar" src={`${base}/author.png`} alt={AUTHOR} width="72" height="72" />
+  <div>
+    <a class="brand" href={`${base}/`}>{SITE_TITLE}</a>
+    <p class="tagline">{SITE_DESC}</p>
+  </div>
+</header>
     <main>
       <slot />
     </main>
