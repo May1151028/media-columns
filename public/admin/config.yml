@@ -1,0 +1,30 @@
+backend:
+  name: github
+  repo: May1151028/media-columns
+  branch: main
+
+media_folder: public/images/articles
+public_folder: /media-columns/images/articles
+
+collections:
+  - name: articles
+    label: 文章
+    label_singular: 文章
+    folder: src/content/articles
+    extension: md
+    format: frontmatter
+    create: true
+    slug: '{{year}}-{{month}}-{{day}}-{{hour}}{{minute}}'
+    summary: '{{outlet}}｜{{title}}'
+    sortable_fields: [date, title, outlet]
+    fields:
+      - { label: 標題, name: title, widget: string }
+      - { label: 發表日期, name: date, widget: datetime, format: 'YYYY-MM-DD', date_format: 'YYYY-MM-DD', time_format: false }
+      - label: 發表媒體
+        name: outlet
+        widget: select
+        options: ['新頭殼', '草根影響力', 'ETtoday', '其他']
+      - { label: 原文連結, name: originalUrl, widget: string, required: false }
+      - { label: 摘要, name: summary, widget: text, required: false }
+      - { label: 草稿（勾選後不公開）, name: draft, widget: boolean, default: false }
+      - { label: 內文, name: body, widget: markdown }
