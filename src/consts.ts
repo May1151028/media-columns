@@ -1,5 +1,5 @@
 // 網站基本設定：想改站名、說明、作者，只要改這裡
-export const SITE_TITLE = '媒體專欄';
+export const SITE_TITLE = '瑋話直說的媒體專欄';
 export const SITE_DESC = '已發表於各媒體的文章';
 export const AUTHOR = '作者姓名';
 
